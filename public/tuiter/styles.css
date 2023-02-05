@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    color: white;
+}
+.wd-border {
+    max-width: 600px;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    padding-top: 12px;
+    margin-left: 16px;
+    margin-right: 12px;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+.wd-float-left{
+    float: left;
+}
+.wd-float-right{
+    float: right;
+    margin-right: 16px;
+}
+.wd-float-done {
+    clear: both;
+}
+.wd-margin-left {
+    margin-left: 16px;
+}
+.wd-fg-color-light-gray {
+    color: lightgray;
+}
