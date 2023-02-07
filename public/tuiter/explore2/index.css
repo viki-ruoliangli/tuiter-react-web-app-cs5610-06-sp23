@@ -1,0 +1,88 @@
+body { background: white }
+
+.wd-circle-icon {
+    border-radius: 50%;
+}
+
+.search-bar {
+    background-color: lightgray;
+}
+
+.input-group-text {
+    background-color: lightgray;
+}
+
+.text-primary{
+    color: deepskyblue !important;
+}
+
+.fa-cog {
+    color: black;
+}
+
+.btn.mt-2 {
+    background-color: deepskyblue;
+}
+
+.btn {
+    background-color: black;
+}
+
+.wd-promoted, .wd-edition{
+    font-size: 0.8em;
+}
+
+i.d-inline {
+    margin-right: 1em;
+}
+
+.wd-promoted-icon.fa-check-circle {
+    color: gold;
+}
+
+.nav-link {
+    color: lightgrey;
+}
+
+.nav .active {
+    color: black;
+    border-bottom-style: solid;
+    border-bottom-color: deepskyblue;
+}
+
+.wd-left-sidebar .list-group-item {
+    border-style: none;
+}
+
+.wd-show-more {
+    color: deepskyblue;
+}
+
+.list-group.wd-right-sidebar {
+    border-radius: 20px 20px 20px 20px;
+    border-width: 0px;
+}
+
+.wd-right-sidebar .list-group-item {
+    background-color: ghostwhite;
+    border-style: none;
+}
+
+.wd-right-sidebar .list-group-item.wd-edition {
+    background-color: white;
+    border-style: none;
+}
+
+.wd-upside-edition {
+    border-radius: 0 0 20px 20px !important;
+    border-width: 0px;
+}
+
+.input-group, #search-tuiter {
+    background-color: ghostwhite;
+}
+
+.nav-bar, .wd-search-tuiter{
+    display: flex;
+    justify-content: space-between;
+}
