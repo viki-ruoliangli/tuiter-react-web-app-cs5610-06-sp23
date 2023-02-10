@@ -16,7 +16,7 @@ function homeComponent() {
                 ${PostList()}       
             </div>
             <div class="d-none d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
-                ${PostSummaryList()}
+                ${PostSummaryList("home")}
             </div>
         </div>
     `);

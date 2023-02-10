@@ -47,7 +47,7 @@ const ExploreComponent = () => {
         </div>
 
         
-        ${PostSummaryList()}
+        ${PostSummaryList("explore")}
     `);
 }
 export default ExploreComponent;
