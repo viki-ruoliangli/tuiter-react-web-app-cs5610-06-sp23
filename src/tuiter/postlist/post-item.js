@@ -32,13 +32,13 @@ const PostItem = (
     } else {
       // console.log(postDetail.postContentId);
       const postContentId = postDetail.postContentId;
-      const middleContent = postsArray.find((postContentId) => postContentId === postContentId)
+      const middleContent = postsArray.find((obj) => obj._id === postContentId)
       // console.log(middleContent.userName);
 
       return <div className="mt-2 border wd-rounded rounded-3">
         <div className="mx-2">
           <div className="wrapper">
-            <img className="rounded-circle" style= {{"height":"1em"}} src={`/images/${middleContent.userAvatar}`}/>
+            <img className="rounded-circle" style= {{"height":"1em"}} src={`/images/${middleContent.userAvatar}`} alt={`${middleContent.userAvatar}`}/>
             <label className="fw-bolder">{middleContent.userName}</label>
             <i className="bi bi-patch-check-fill text-primary"></i>
             <label className="text-muted">@{middleContent.handle} - {middleContent.time}</label>
