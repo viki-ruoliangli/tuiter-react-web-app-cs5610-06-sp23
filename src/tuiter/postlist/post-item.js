@@ -21,23 +21,24 @@ const PostItem = (
     }
 ) => {
   function createPostMiddleContent(postDetail) {
-    let middleContent = {};
+
+    // console.log(typeof postDetail);
     if (postDetail.isSelfMadePost) {
-      middleContent = postDetail;
+      const middleContent = postDetail;
 
       return <div className="mt-2 border wd-rounded">
         <div className="rounded-3 row"><img className="wd-rounded" src={`/images/${middleContent.image}`} alt=""/></div>
       </div>
     } else {
-      const id = postDetail.postContentId;
-      const middleContent = postsArray.find(function(id) {
-        return id = id;
-      });
+      // console.log(postDetail.postContentId);
+      const postContentId = postDetail.postContentId;
+      const middleContent = postsArray.find((postContentId) => postContentId === postContentId)
+      // console.log(middleContent.userName);
 
       return <div className="mt-2 border wd-rounded rounded-3">
         <div className="mx-2">
           <div className="wrapper">
-            <img className="rounded-circle" style= {{"height":"1em"}} src={`/images/${middleContent.userAvatar}`} alt=""/>
+            <img className="rounded-circle" style= {{"height":"1em"}} src={`/images/${middleContent.userAvatar}`}/>
             <label className="fw-bolder">{middleContent.userName}</label>
             <i className="bi bi-patch-check-fill text-primary"></i>
             <label className="text-muted">@{middleContent.handle} - {middleContent.time}</label>

@@ -1,6 +1,7 @@
 import React from "react";
 import PostList from "../postlist";
 import "./index.css";
+
 const HomeComponent = () => {
   return(
       <>
@@ -20,7 +21,7 @@ const HomeComponent = () => {
 
         <ul className="nav nav-pills mb-2">
           <li className="nav-item">
-            <button className="nav-link active">For You</button>
+            <button className="nav-link active" href="#">For You</button>
           </li>
           <li className="nav-item">
             <button className="nav-link" href="#">Trending</button>
