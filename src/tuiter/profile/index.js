@@ -18,10 +18,10 @@ const ProfileComponent = () => {
             </div>
 
             <div className="position-relative mt-2">
-                <img className="w-100" src={`../images/${profile.bannerPicture}`}/>
+                <img className="w-100" src={`../images/${profile.bannerPicture}`} alt="banner"/>
                 <img className="position-absolute rounded-circle"
                      style={{"height": "50%", "width": "25%", "left": "5%", "bottom": "-25%"}}
-                     src={`../images/${profile.profilePicture}`}/>
+                     src={`../images/${profile.profilePicture}`} alt="headshot"/>
             </div>
 
             <Link to="/tuiter/edit-profile" className="clearfix">

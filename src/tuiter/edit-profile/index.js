@@ -31,7 +31,7 @@ const EditProfileComponent = () => {
             <button className="btn btn-dark rounded-pill float-end" onClick={updateProfileHandler}>Save</button>
 
             <div className="position-relative mt-2 mb-5">
-                <img className="w-100" style={{"opacity": "0.6"}} src="/images/banner.png"/>
+                <img className="w-100" style={{"opacity": "0.6"}} src="/images/banner.png" alt="default-banner" />
                 <i className="position-absolute bi bi-camera fs-4 ps-2 pe-2 pt-1 pb-1 rounded-circle text-white"
                    style={{"left": "40%", "bottom": "40%", "background": "black", "opacity": "0.6"}}></i>
                 <i className="position-absolute bi bi-x fs-4 ps-2 pe-2 pt-1 pb-1 rounded-circle text-white"
@@ -42,7 +42,7 @@ const EditProfileComponent = () => {
                 </div>
                 <img className="position-absolute rounded-circle"
                      style={{"height": "50%", "width": "25%", "left": "5%", "bottom": "-25%", "opacity": "0.6"}}
-                     src="/images/headshot.png"/>
+                     src="/images/headshot.png" alt="default-headshot"/>
                 <i className="position-absolute bi bi-camera fs-4 ps-2 pe-2 pt-1 pb-1 rounded-circle text-white"
                    style={{"left": "15%", "bottom": "-10%", "background": "black", "opacity": "0.6"}}></i>
             </div>
