@@ -1,50 +1,59 @@
-import React from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import TuitsStats from "./tuits-stats";
 import {useDispatch} from "react-redux";
-import {deleteTuit} from "../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../../services/tuits-thunks";
 
-const TuitItem = (
+
+const TuitsListItem = (
     {
-      post = {
-        "_id": 345,
-        "topic": "Energy",
-        "userName": "Tesla",
-        "title": "Tesla FSD finally makes driving obsolete. After years of delay, Tesla Full Self Driving can drive you to work while you work, play, or sleep",
-        "time": "4h",
-        "image": "tesla.jpeg",
-        "liked": true,
-        "replies": 115,
-        "retuits": 189,
-        "likes": 2236,
-        "handle": "tesla",
-        "tuit": "Tesla Immersive, our multichannel audio upmixer, enables stereo content to be remixed in real time, optimizing the listening experience for our vehicles specifically"}
+        tuit = {
+            _id: 234,
+            topic: "Tesla",
+            userName: "Tesla",
+            time: "4d",
+            title: "Autopilot and Full Self-Driving Capability",
+            image: "tesla.png",
+            liked: false,
+            replies: 222,
+            retuits: 543,
+            likes: 3333,
+            handle: "@tesla",
+            tuit: "Autopilot is an advanced driver assistance system that enhances safety and convenience behind the wheel. When used properly, Autopilot reduces your overall workload as a driver. Each new Tesla vehicle is equipped with eight external cameras and powerful vision processing to provide an additional layer of safety. All vehicles built for the North American market now use our camera-based Tesla Vision to deliver Autopilot features, rather than radar. All vehicles built for the North American market now use our camera-based Tesla Vision to deliver Autopilot features, rather than radar."
+        }
     }
 ) => {
-  const dispatch = useDispatch();
-  const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
-  }
+    const dispatch = useDispatch();
+    const deleteTuitHandler = (id) => {
 
-  return(
-      <li className="list-group-item">
-        <div className="row">
-          <div className="col-auto">
-            <img width={50} className="float-end rounded-circle" src={`../images/${post.image}`} alt=""/>
-          </div>
-          <div className="col-10">
-            <div>
-              <label className="fw-bolder">{post.userName}</label> <i className="bi bi-patch-check-fill text-primary"></i> <label className="text-muted">@{post.handle} · {post.time}</label>
-              <i className="bi bi-x-lg float-end" onClick={() => deleteTuitHandler(post._id)}></i>
+        dispatch(deleteTuitThunk(id))
+    }
+
+    return(
+        <div className="list-group-item pt-3 wd-post-list-item border-1">
+            <div className="row">
+                {/* Left Avatar */}
+                <div className="col-auto">
+                    <img src={`/images/${tuit.image}`} className="rounded-circle" width="48px" alt="avatar"/>
+                </div>
+                {/* Right Content */}
+                <div className="col-10">
+                    {/* User's name handle and post time */}
+                    <div>
+                        <i className="bi bi-x-lg float-end" onClick={() => deleteTuitHandler(tuit._id)} />
+                        <span className="fw-bolder">{tuit.userName}{' '}</span>
+                        <FontAwesomeIcon icon="fa-solid fa-circle-check" className="text-primary"/>
+                        <span className="text-secondary">{' '}{tuit.handle} {'\u00B7'} {tuit.time}</span>
+                    </div>
+                    {/* Tuit */}
+                    <div className="mb-4">
+                        {tuit.tuit}
+                    </div>
+
+                    <TuitsStats tuit={tuit}/>
+                </div>
             </div>
-            <div>{post.tuit}</div>
-            <div className="d-flex justify-content-between me-5 mt-2">
-              <div><a href="tuits-list.js"><i className="bi bi-chat"></i></a><span className="ms-2">{post.replies}</span></div>
-              <div><a href="tuits-list.js"><i className="bi bi-repeat"></i></a><span className="ms-2">{post.retuits}</span></div>
-              <div><a href="tuits-list.js">{post.liked? <i className="bi bi-heart-fill text-danger"></i>: <i className="bi bi-heart"></i>}</a><span className="ms-2">{post.likes}</span></div>
- <i className="bi bi-share"></i>
-            </div>
-          </div>
         </div>
-      </li>
-  );
-};
-export default TuitItem;
+    )
+}
+
+export default TuitsListItem;
