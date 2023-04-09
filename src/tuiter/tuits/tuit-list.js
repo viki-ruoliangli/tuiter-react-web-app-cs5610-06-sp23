@@ -13,12 +13,12 @@ const TuitsList = () => {
 
     useEffect(() => {
         dispatch(findTuitsThunk())
-    }, [])
+    }, [dispatch])
 
     return(
         <ul className="list-group">
             {
-                loading &&
+                // loading &&
                 <li className="list-group-item">
                     Loading...
                 </li>
