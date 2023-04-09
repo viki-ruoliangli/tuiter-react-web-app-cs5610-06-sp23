@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {deleteTuitThunk} from "../../services/tuits-thunks";
 
 
-const TuitsListItem = (
+const TuitsItem = (
     {
         tuit = {
             _id: 234,
@@ -56,4 +56,4 @@ const TuitsListItem = (
     )
 }
 
-export default TuitsListItem;
+export default TuitsItem;

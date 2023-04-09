@@ -20,8 +20,11 @@ export const deleteTuit = async (tid) => {
 }
 
 export const updateTuit = async (tuit) => {
-  const response = await axios
+  // const response = await axios
+  //     .put(`${TUITS_API}/${tuit._id}`, tuit);
+
+  await axios
       .put(`${TUITS_API}/${tuit._id}`, tuit);
-  console.log("hereherhehrhehrhe   tuits-service: " + response.data);
-  return response.data;
+
+  return tuit;
 }
