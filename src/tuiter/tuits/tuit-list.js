@@ -1,18 +1,19 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector}
     from "react-redux";
-
-import TuitsItem from "./tuit-item";
+import TuitItem from "./tuit-item";
 import {findTuitsThunk}
     from "../../services/tuits-thunks";
 
 const TuitsList = () => {
     const {tuits, loading} = useSelector(
         state => state.tuitsData)
-
     const dispatch = useDispatch();
 
+    console.log("here 111111")
+
     useEffect(() => {
+        console.log("here 222222")
         dispatch(findTuitsThunk())
     }, [dispatch])
 
@@ -26,17 +27,10 @@ const TuitsList = () => {
             }
             {
                 tuits.map(tuit => {
-                    return(
-                        <div>
-                            <h1>{tuit.text}</h1>
-                            <TuitsItem key={tuit._id} tuit={tuit}/>
-                        </div>
-                    )
+                    return(<TuitItem key={tuit._id} tuit={tuit}/>)
                 })
             }
         </ul>
     );
 };
 export default TuitsList;
-
-
